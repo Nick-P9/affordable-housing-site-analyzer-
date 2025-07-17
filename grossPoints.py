@@ -132,16 +132,42 @@ def find_medical_facilities(lat, lng, radius=5000):
     return facilities
 
 def transit_points(distance):
-    if distance <= 2:
-        return 1
+    if distance <= 0.30:
+        return 6.0
+    elif distance <= 0.50:
+        return 5.5
+    elif distance <= 0.75:
+        return 5.0
+    elif distance <= 1.00:
+        return 4.5
+    elif distance <= 1.25:
+        return 4.0
+    elif distance <= 1.50:
+        return 3.5
+    elif distance <= 1.75:
+        return 3.0
+    elif distance <= 2.00:
+        return 2.5
     else:
-        return 0
+        return 0.0
 
 def community_points(distance):
-    if distance <= 2:
-        return 1
+    if distance <= 0.30:
+        return 4.0
+    elif distance <= 0.50:
+        return 3.5
+    elif distance <= 0.75:
+        return 3.0
+    elif distance <= 1.00:
+        return 2.5
+    elif distance <= 1.25:
+        return 2.0
+    elif distance <= 1.50:
+        return 1.5
+    elif distance <= 1.75:
+        return 1.0
     else:
-        return 0
+        return 0.0
 
 def calculate_points(lat, lon):
     schools = find_schools(lat, lon)
